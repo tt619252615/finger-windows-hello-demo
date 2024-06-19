@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Fingerprints</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Manage Fingerprints</h1>
+    <form method="POST">
+        <label for="location">Delete Fingerprint at Location:</label>
+        <input type="number" id="location" name="location" required>
+        <button type="submit" name="delete">Delete</button>
+    </form>
+    <h2>Stored Fingerprints</h2>
+    <ul>
+        {% for template in templates %}
+            <li>Fingerprint at location: {{ template }}</li>
+        {% endfor %}
+    </ul>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flashes">
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>

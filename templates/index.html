@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fingerprint Management</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Fingerprint Management System</h1>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('enroll') }}">Enroll Fingerprint</a></li>
+            <li><a href="{{ url_for('verify') }}">Verify Fingerprint</a></li>
+            <li><a href="{{ url_for('manage') }}">Manage Fingerprints</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
